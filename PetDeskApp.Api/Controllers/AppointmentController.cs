@@ -48,7 +48,7 @@ namespace PetDeskApp.Api.Controllers
                 PetParent = $"{a.User?.LastName}, {a.User?.FirstName}",
                 Pet = a.Animal?.FirstName ?? "New Pet",
                 Breed = a.Animal?.Breed ?? "Unknown"
-            });
+            }).OrderBy(a => a.Date);
 
             return new OkObjectResult(appointmentSummaries);
         }
