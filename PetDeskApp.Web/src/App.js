@@ -1,11 +1,13 @@
 import { useEffect } from 'react';
-
-import PetDeskApiService from './services/petdesk_api_service';
+import { useSelector } from 'react-redux';
 import { RouterProvider } from 'react-router-dom';
+import { Alert } from '@mui/material';
 
 import router from './Routes';
-import { useSelector } from 'react-redux';
-import { Alert } from '@mui/material';
+
+import PetDeskApiService from './services/petdesk_api_service';
+
+import styles from './App.module.css';
 
 function App() {
   const alerts = useSelector((state) => state.alerts.items);
@@ -17,21 +19,11 @@ function App() {
   return (
     <>
       <RouterProvider router={router} />
-      <div
-        style={{
-          position: 'absolute',
-          bottom: 0,
-          width: '100%',
-          zIndex: 999999,
-          display: 'flex',
-          flexDirection: 'column-reverse',
-          alignItems: 'center',
-        }}
-      >
+      <div id='alert-container' className={styles.alertContainer}>
         {alerts &&
           alerts.length > 0 &&
           alerts.map((a, i) => (
-            <div key={i} style={{ maxWidth: '280px', margin: '.25rem 0' }}>
+            <div id={`alert-${i}`} key={i} className={styles.alert}>
               <Alert severity={a.severity}>{a.message}</Alert>
             </div>
           ))}

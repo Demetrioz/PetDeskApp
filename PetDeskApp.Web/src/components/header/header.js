@@ -8,6 +8,7 @@ export default function Header() {
         position='fixed'
         sx={{ zIndex: (theme) => theme.zIndex.drawer + 1 }}
       >
+        {/* TODO: Add logged in user info, logout button, etc */}
         <Toolbar>
           <Typography variant='h6' noWrap component='div'>
             PetDesk App

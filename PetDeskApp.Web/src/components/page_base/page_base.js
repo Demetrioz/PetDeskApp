@@ -8,6 +8,7 @@ export default function PageBase(props) {
     <>
       <Header />
       <SideNavigation />
+      {/* TODO: Make this responsive */}
       <Box
         id='content'
         sx={{ marginTop: '64px', marginLeft: '220px', padding: '1rem' }}

@@ -21,6 +21,7 @@ export default function Dashboard() {
   return (
     <PageBase>
       <div style={{ display: 'flex', flexWrap: 'wrap' }}>
+        {/* TODO: Create specific KPI / Card Components */}
         <Card sx={cardStyles} variant='outlined'>
           <CardHeader
             title='Upcoming Appointments'

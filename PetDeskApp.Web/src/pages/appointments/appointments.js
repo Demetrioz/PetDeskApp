@@ -1,3 +1,6 @@
+import { useEffect, useState } from 'react';
+import { useDispatch } from 'react-redux';
+import dayjs from 'dayjs';
 import {
   Checkbox,
   Table,
@@ -6,15 +9,13 @@ import {
   TableHead,
   TableRow,
 } from '@mui/material';
-import PageBase from '../../components/page_base/page_base';
-import { useEffect, useState } from 'react';
-import { useDispatch } from 'react-redux';
+import { DateTimePicker } from '@mui/x-date-pickers';
 
-import PetDeskApiService from '../../services/petdesk_api_service';
+import PageBase from '../../components/page_base/page_base';
 
 import { publishAlert } from '../../utilities/alert_utility';
-import dayjs from 'dayjs';
-import { DateTimePicker } from '@mui/x-date-pickers';
+
+import PetDeskApiService from '../../services/petdesk_api_service';
 
 export default function Appointments() {
   const dispatch = useDispatch();

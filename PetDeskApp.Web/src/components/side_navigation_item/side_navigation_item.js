@@ -5,7 +5,6 @@ export default function SideNavigationItem(props) {
   const navigate = useNavigate();
 
   const handleNavigation = () => {
-    console.log('navigating?', props.destination);
     navigate(props.destination);
   };
 
